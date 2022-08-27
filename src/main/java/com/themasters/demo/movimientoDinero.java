@@ -1,9 +1,8 @@
 package com.themasters.demo;
 
 public class movimientoDinero extends empleado {
-    public long ide;
-    public float monto;
-
+    private long ide;
+    private float monto;
 
     public movimientoDinero(long id, String nombre, String documento, String telefono, String direccion, long id1, String correo, long ide, float monto) {
         super(id, nombre, documento, telefono, direccion, id1, correo);
@@ -32,13 +31,6 @@ public class movimientoDinero extends empleado {
         return "movimientoDinero{" +
                 "ide=" + ide +
                 ", monto=" + monto +
-                ", id=" + id +
-                ", correo='" + correo + '\'' +
-                ", id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", documento='" + documento + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", direccion='" + direccion + '\'' +
                 '}';
     }
 }

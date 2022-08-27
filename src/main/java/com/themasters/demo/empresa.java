@@ -1,11 +1,11 @@
 package com.themasters.demo;
 
 public class empresa {
-   public long id;
-   public String nombre;
-   public String documento;
-   public String telefono;
-   public String direccion;
+   private long id;
+   private String nombre;
+   private String documento;
+   private String telefono;
+   private String direccion;
 
    public empresa(long id, String nombre, String documento, String telefono, String direccion) {
       this.id = id;

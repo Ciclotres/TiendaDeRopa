@@ -1,8 +1,8 @@
 package com.themasters.demo;
 
 public class empleado extends empresa{
-    public long id;
-    public String correo;
+    private long id;
+    private String correo;
 
     public empleado(long id, String nombre, String documento, String telefono, String direccion, long id1, String correo) {
         super(id, nombre, documento, telefono, direccion);
@@ -33,11 +33,6 @@ public class empleado extends empresa{
         return "empleado{" +
                 "id=" + id +
                 ", correo='" + correo + '\'' +
-                ", id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", documento='" + documento + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", direccion='" + direccion + '\'' +
                 '}';
     }
 }
