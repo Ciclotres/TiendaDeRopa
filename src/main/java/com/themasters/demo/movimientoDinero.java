@@ -1,21 +1,22 @@
 package com.themasters.demo;
 
-public class movimientoDinero extends empleado {
-    private long ide;
+public class movimientoDinero {
+    private long id;
     private float monto;
+    private empleado empleado;
 
-    public movimientoDinero(long id, String nombre, String documento, String telefono, String direccion, long id1, String correo, long ide, float monto) {
-        super(id, nombre, documento, telefono, direccion, id1, correo);
-        this.ide = ide;
+    public movimientoDinero(long id, float monto, com.themasters.demo.empleado empleado) {
+        this.id = id;
         this.monto = monto;
+        this.empleado = empleado;
     }
 
-    public long getIde() {
-        return ide;
+    public long getId() {
+        return id;
     }
 
-    public void setIde(long ide) {
-        this.ide = ide;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public float getMonto() {
@@ -26,11 +27,11 @@ public class movimientoDinero extends empleado {
         this.monto = monto;
     }
 
-    @Override
-    public String toString() {
-        return "movimientoDinero{" +
-                "ide=" + ide +
-                ", monto=" + monto +
-                '}';
+    public com.themasters.demo.empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(com.themasters.demo.empleado empleado) {
+        this.empleado = empleado;
     }
 }

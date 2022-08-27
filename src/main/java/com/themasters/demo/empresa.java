@@ -1,5 +1,7 @@
 package com.themasters.demo;
 
+import java.util.List;
+
 public class empresa {
    private long id;
    private String nombre;
@@ -7,12 +9,15 @@ public class empresa {
    private String telefono;
    private String direccion;
 
-   public empresa(long id, String nombre, String documento, String telefono, String direccion) {
+   private List<empleado> empleados; //creando lista de empleados
+
+   public empresa(long id, String nombre, String documento, String telefono, String direccion, List<empleado> empleados) {
       this.id = id;
       this.nombre = nombre;
       this.documento = documento;
       this.telefono = telefono;
       this.direccion = direccion;
+      this.empleados = empleados;
    }
 
    public long getId() {
@@ -55,14 +60,11 @@ public class empresa {
       this.direccion = direccion;
    }
 
-   @Override
-   public String toString() {
-      return "empresa{" +
-              "id=" + id +
-              ", nombre='" + nombre + '\'' +
-              ", documento='" + documento + '\'' +
-              ", telefono='" + telefono + '\'' +
-              ", direccion='" + direccion + '\'' +
-              '}';
+   public List<empleado> getEmpleados() {
+      return empleados;
+   }
+
+   public void setEmpleados(List<empleado> empleados) {
+      this.empleados = empleados;
    }
 }

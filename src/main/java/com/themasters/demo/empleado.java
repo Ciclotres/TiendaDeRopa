@@ -1,21 +1,26 @@
 package com.themasters.demo;
 
-public class empleado extends empresa{
+import java.util.List;
+
+public class empleado {
     private long id;
     private String correo;
+    private String rol;
+    private empresa empresa; //atributo empresa es de tipo empresa
+    private List<movimientoDinero> movimientosD; // cuales fueron los movimientos segun empleado
 
-    public empleado(long id, String nombre, String documento, String telefono, String direccion, long id1, String correo) {
-        super(id, nombre, documento, telefono, direccion);
-        this.id = id1;
+    public empleado(long id, String correo, String rol, com.themasters.demo.empresa empresa, List<movimientoDinero> movimientosD) {
+        this.id = id;
         this.correo = correo;
+        this.rol = rol;
+        this.empresa = empresa;
+        this.movimientosD = movimientosD;
     }
 
-    @Override
     public long getId() {
         return id;
     }
 
-    @Override
     public void setId(long id) {
         this.id = id;
     }
@@ -28,11 +33,27 @@ public class empleado extends empresa{
         this.correo = correo;
     }
 
-    @Override
-    public String toString() {
-        return "empleado{" +
-                "id=" + id +
-                ", correo='" + correo + '\'' +
-                '}';
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public com.themasters.demo.empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(com.themasters.demo.empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public List<movimientoDinero> getMovimientosD() {
+        return movimientosD;
+    }
+
+    public void setMovimientosD(List<movimientoDinero> movimientosD) {
+        this.movimientosD = movimientosD;
     }
 }
