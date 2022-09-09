@@ -1,6 +1,7 @@
 package com.Prendas.TiendaDeRopa.Entidades;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "Empleado")
@@ -20,15 +21,23 @@ public class Empleado {
     @JoinColumn(name = "id_perfil")
     private Perfil perfil;
 
+    @Column(name = "createdAt", nullable = false)
+    private Date createdAt;
+
+    @Column(name = "updatedAt", nullable = false)
+    private Date updatedAt;
+
     public Empleado() {
     }
 
-    public Empleado(long id_empleado, String correo, Rol rol, Empresa empresa, Perfil perfil) {
+    public Empleado(long id_empleado, String correo, Rol rol, Empresa empresa, Perfil perfil, Date createdAt, Date updatedAt) {
         this.id_empleado = id_empleado;
         this.correo = correo;
         this.rol = rol;
         this.empresa = empresa;
         this.perfil = perfil;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public long getId_empleado() {
@@ -71,14 +80,32 @@ public class Empleado {
         this.perfil = perfil;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     @Override
     public String toString() {
         return "Empleado{" +
                 "id_empleado=" + id_empleado +
                 ", correo='" + correo + '\'' +
-                ", rol='" + rol + '\'' +
+                ", rol=" + rol +
                 ", empresa=" + empresa +
                 ", perfil=" + perfil +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }
