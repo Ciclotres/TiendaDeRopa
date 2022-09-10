@@ -34,8 +34,8 @@ public class EmpleadoControlador {
         }
         //MIRAR LO DE ACTUALIZAR CUALQUIER CAMPO  PQ HASTA AHORA SI BUSCA EL ID PERO QUE CAMBIA?
         @PatchMapping("/ActualizarEmpleado/{id_empleado}")
-        public String actualizarEmpleado(@PathVariable("id_empleado") Long id_empleado){
-                return servicio.actualizarEmpleado(id_empleado);
+        public Empleado actualizarEmpleado(@PathVariable("id_empleado") Long id_empleado, @RequestBody Empleado empleado){
+                return servicio.actualizarEmpleado(id_empleado,empleado);
         }
         @DeleteMapping("/EliminarEmpleado/{id_empleado}")
         public String eliminarEmpleado(@PathVariable("id_empleado") Long id_empleado){

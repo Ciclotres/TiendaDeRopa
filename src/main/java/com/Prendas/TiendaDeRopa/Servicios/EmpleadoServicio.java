@@ -6,6 +6,9 @@ import com.Prendas.TiendaDeRopa.Entidades.Empresa;
 import com.Prendas.TiendaDeRopa.Repositorio.EmpleadoRepositorio;
 import com.Prendas.TiendaDeRopa.Repositorio.EmpresaRepositorio;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,15 +37,23 @@ public class EmpleadoServicio {
             return "El emprleado ya existe.";
         }
     }
-    public String actualizarEmpleado(Long id_empleado){
-        if (buscarEmpleado(id_empleado).isPresent()){
-            Empleado empleado=repositorio.findById(id_empleado).get();
-            repositorio.save(empleado);
-            return "Empleado Actualizado";
+    @PatchMapping("/{id_empleado}")
+    public Empleado actualizarEmpleado(@PathVariable("id_empleado") Long id_empleado, @RequestBody Empleado empleado) {
+        Optional<Empleado> dbdata = repositorio.findById(id_empleado);
+        if (dbdata.isPresent()) {
+            Empleado empleados = dbdata.get();
+            empleados.setCorreo(empleado.getCorreo());
+            empleados.setRol(empleado.getRol());
+            empleados.setEmpresa(empleado.getEmpresa());
+            empleados.setPerfil(empleado.getPerfil());
+            empleados.setCreatedAt(empleado.getCreatedAt());
+            empleados.setUpdatedAt(empleado.getUpdatedAt());
+
+
+            this.repositorio.save(empleados);
+            return empleados;
         }
-        else {
-            return "El Empleado a actualizar no existe";
-        }
+        return null;
     }
     public String eliminarEmpleado(Long id_empleado){
         if(buscarEmpleado(id_empleado).isPresent()){
