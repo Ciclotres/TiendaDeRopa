@@ -1,31 +1,33 @@
 package com.Prendas.TiendaDeRopa.Entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="Empresa")
 public class Empresa {
    @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column(name = "id_empresa", unique = true, length = 12)
    private long id_empresa;
    @Column(name = "nombre", nullable = false, length = 50)
    private String nombre;
    @Column(name = "documento", unique = true, nullable = false, length = 15)
    private String documento;
-    @Column(name = "telefono", nullable = false, length = 15)
+    @Column(name = "telefono", nullable = true, length = 15)
     private String telefono;
-    @Column(name = "direccion", nullable = false, length = 50)
+    @Column(name = "direccion", nullable = true, length = 50)
     private String direccion;
 
-    @Column(name = "createdAt", nullable = false)
+    @Column(name = "createdAt", nullable = true)
     private Date createdAt;
 
-    @Column(name = "updatedAt", nullable = false)
+    @Column(name = "updatedAt", nullable = true)
     private Date updatedAt;
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
     public Empresa() {
     }
@@ -90,10 +92,6 @@ public class Empresa {
 
     public Date getUpdatedAt() {
         return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
     }
 
     @Override

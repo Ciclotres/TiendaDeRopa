@@ -7,6 +7,7 @@ import java.util.Date;
 @Table(name = "Empleado")
 public class Empleado {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_empleado", unique = true, length = 12)
     private long id_empleado;
     @Column(name = "correo", nullable = false, length = 50)
@@ -21,10 +22,10 @@ public class Empleado {
     @JoinColumn(name = "id_perfil")
     private Perfil perfil;
 
-    @Column(name = "createdAt", nullable = false)
+    @Column(name = "createdAt", nullable = true)
     private Date createdAt;
 
-    @Column(name = "updatedAt", nullable = false)
+    @Column(name = "updatedAt", nullable = true)
     private Date updatedAt;
 
     public Empleado() {

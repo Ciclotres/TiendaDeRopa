@@ -6,16 +6,17 @@ import java.util.Date;
 @Table(name = "Perfil")
 public class Perfil {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_perfil", unique = true, length = 12)
     private String id_perfil;
-    @Column(name = "image", nullable = false, length = 50)
+    @Column(name = "image", nullable = true, length = 50)
     private String image;
-    @Column(name = "telefono", nullable = false, length = 12)
+    @Column(name = "telefono", nullable = true, length = 12)
     private String telefono;
 
-    @Column(name = "createdAt", nullable = false)
+    @Column(name = "createdAt", nullable = true)
     private Date createdAt;
-    @Column(name = "updatedAt", nullable = false)
+    @Column(name = "updatedAt", nullable = true)
     private Date updatedAt;
 
     //pendiente el campo user

@@ -1,10 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5" >
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Tareas</title>
+
+<style type="text/css">
+ html, body {
+   margin:0px;
+   height:100%;
+ }
+ </style>
+
 </head>
 <body>
-$END$
+<main class="container-fluid h-100" > <!--style="height:100%;" -->
+
+    <div class="row border bg-light h-100 " >  <!--style="height:100%;" -->
+
+        <div class="col-2  text-dark border    d-flex flex-column align-items-center justify-content-center" ><!--text-center   align-middle-->
+
+            <ul class="nav flex-column d-flex" ><!--style="margin-top:75%"-->
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Ingresos y Egresos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Empresas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Cerrar Sesion</a>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-10  bg-white text-dark border d-flex flex-column align-items-center" >
+
+            <h2 class="text-center"> Inicio</h2 >
+
+            </div>
+
+    </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
+
 </html>
+
+

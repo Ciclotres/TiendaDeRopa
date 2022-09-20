@@ -24,13 +24,20 @@ public class EmpresaServicio {
    public Optional<Empresa> buscarEmpresa(long id_empresa){
         return repositorio.findById(id_empresa);
    }
-    public String crearEmpresa(Empresa empresa){
+
+    //Metodo que me trae un objeto de tipo Empresa cuando cuento con el id de la misma
+    public Empresa getEmpresaById(Long id_empresa){
+        return repositorio.findById(id_empresa).get();
+    }
+
+
+    public Boolean crearEmpresa(Empresa empresa){
         if(!buscarEmpresa(empresa.getId_empresa()).isPresent()) {
             repositorio.save(empresa);
-            return "Empresa registrada exitosamente";
+            return true;
         }
         else {
-            return "La empresa ya existe.";
+            return false;
         }
     }
     @PatchMapping("/{id_empresa}")
