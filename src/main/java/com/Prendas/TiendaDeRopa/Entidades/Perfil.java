@@ -1,6 +1,7 @@
 package com.Prendas.TiendaDeRopa.Entidades;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 @Entity
 @Table(name = "Perfil")
@@ -15,15 +16,15 @@ public class Perfil {
     private String telefono;
 
     @Column(name = "createdAt", nullable = true)
-    private Date createdAt;
+    private LocalDate createdAt;
     @Column(name = "updatedAt", nullable = true)
-    private Date updatedAt;
+    private LocalDate updatedAt;
 
     //pendiente el campo user
     public Perfil() {
     }
 
-    public Perfil(String id_perfil, String image, String telefono, Date createdAt, Date updatedAt) {
+    public Perfil(String id_perfil, String image, String telefono, LocalDate createdAt, LocalDate updatedAt) {
         this.id_perfil = id_perfil;
         this.image = image;
         this.telefono = telefono;
@@ -55,19 +56,19 @@ public class Perfil {
         this.telefono = telefono;
     }
 
-    public Date getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDate getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDate updatedAt) {
         this.updatedAt = updatedAt;
     }
 

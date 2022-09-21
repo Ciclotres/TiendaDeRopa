@@ -1,6 +1,7 @@
 package com.Prendas.TiendaDeRopa.Entidades;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -20,19 +21,19 @@ public class Empresa {
     private String direccion;
 
     @Column(name = "createdAt", nullable = true)
-    private Date createdAt;
+    private LocalDate createdAt;
 
     @Column(name = "updatedAt", nullable = true)
-    private Date updatedAt;
+    private LocalDate updatedAt;
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDate updatedAt) {
         this.updatedAt = updatedAt;
     }
 
     public Empresa() {
     }
 
-    public Empresa(long id_empresa, String nombre, String documento, String telefono, String direccion, Date createdAt, Date updatedAt) {
+    public Empresa(long id_empresa, String nombre, String documento, String telefono, String direccion, LocalDate createdAt, LocalDate updatedAt) {
         this.id_empresa = id_empresa;
         this.nombre = nombre;
         this.documento = documento;
@@ -82,15 +83,15 @@ public class Empresa {
         this.direccion = direccion;
     }
 
-    public Date getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDate getUpdatedAt() {
         return updatedAt;
     }
 

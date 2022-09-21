@@ -6,9 +6,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <title>Lista de Empresas - Ciclo3</title>
+    <title>Lista de Empresas</title>
     <style>
 
         html, body {
@@ -55,7 +55,13 @@
 
             <!-- <h2 class="text-center"> Inicio</h2 >-->
              <h1 class="mt-5" > Gestión de Empresas</h1>
-            <div class="col-12 text-star border mt-4" >
+
+            <!-- vamos a crear un boton que sirva para agregar nuevas empresas -->
+            <div class="col-12 text-end  mt-5" >
+            <button type="button" class="btn btn-primary "><a class="nav-link link-white" th:href="@{/AgregarEmpresa}">Crear</a></button>
+            </div>
+
+            <div class="col-12 text-star border mt-1" >
             <h2 > Listar Empresas</h2>
              </div>
             <div class=" col-12 table-responsive">
@@ -66,7 +72,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Dirección</th>
-                <th scope="col">Telefono</th>
+                <th scope="col">Teléfono</th>
                 <th scope="col">NIT</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Eliminar</th>
@@ -87,9 +93,7 @@
             </tr>
         </table>
             </div>
-            <!-- vamos a crear un boton que sirva para agregar nuevas empresas -->
-            <button type="button" class="btn btn-primary"><a class="nav-link link-white" th:href="@{/AgregarEmpresa}">Agregar Nueva Empresa</a></button>
-            <br><br>
+
 
 
 
@@ -101,7 +105,7 @@
 
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>-->
 
 <script th:inline="javascript">
     window.onload=function(){

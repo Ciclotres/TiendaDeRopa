@@ -64,11 +64,16 @@ public class FrontControlador {
 
 
     @GetMapping("/editarEmpresa/{id}")
-    public String editarEmpresa(Model model, @PathVariable Long id, @ModelAttribute("mensaje") String mensaje){
+    public String editarEmpresa(Model model, @PathVariable Long id, @ModelAttribute("mensaje") String mensaje, @ModelAttribute("fecha") String fecha){
         Empresa emp=empresaServicio.getEmpresaById(id);
         //Creamos un atributo para el modelo, que se llame igualmente emp y es el que ira al html para llenar o alimentar campos
         model.addAttribute("emp",emp);
         model.addAttribute("mensaje", mensaje);
+        LocalDate fechas = LocalDate.now();
+        fecha=fechas.toString();
+        model.addAttribute("fecha", fecha);
+
+
         return "editarEmpresa";
     }
 

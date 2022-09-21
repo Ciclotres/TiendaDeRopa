@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Agregar nueva Empresa - Ciclo3</title>
+    <title> Nueva Empresa</title>
     <style>
         a{
             color:white;
@@ -20,14 +20,14 @@
 <body>
 
 <div class="container">
-    <h1> Agregue aqui los datos de Empresa</h1>
+    <h1> Crear Empresa</h1>
     <br>
     <!--Crear formulario para llenar los datos de la empresa y guardarlo en el objeto emp -->
     <form th:action="@{/CrearEmpresa}" th:object="${emp}"  method="post">
         <!--Campo para nombre-->
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="nombre">Nombre de la Empresa:</label>
+                <label class="col-md-3" for="nombre">Nombre:</label>
                 <div class="col-md-6">
                     <input type="text" th:field="*{nombre}" class="form-control" id="nombre" required="required"></div>
             </div>
@@ -36,7 +36,7 @@
         <!--Campo para direccion-->
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="direccion">Direccion de la Empresa:</label>
+                <label class="col-md-3" for="direccion">Dirección:</label>
                 <div class="col-md-6">
                     <input type="text" th:field="*{direccion}" class="form-control" id="direccion" required="required"></div>
             </div>
@@ -45,7 +45,7 @@
         <!--Campo para telefono-->
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="telefono">Telefono de la Empresa:</label>
+                <label class="col-md-3" for="telefono">Teléfono:</label>
                 <div class="col-md-6">
                     <input type="text" th:field="*{telefono}" class="form-control" id="telefono" required="required"></div>
             </div>
@@ -54,7 +54,7 @@
         <!--Campo para NIT-->
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="NIT">NIT o RUT de la Empresa:</label>
+                <label class="col-md-3" for="NIT">NIT o RUT:</label>
                 <div class="col-md-6">
                     <input type="text" th:field="*{documento}" class="form-control" id="NIT" required="required"></div>
             </div>
@@ -77,7 +77,7 @@
     </form>
 
     <br>
-    <a href="javascript: history.go(-1)" class="btn btn-info" role="button">Atrás</a>
+    <a href="javascript: history.go(-1)" class="btn btn-info" role="button">Ver empresas</a>
 
 </div>
 </body>

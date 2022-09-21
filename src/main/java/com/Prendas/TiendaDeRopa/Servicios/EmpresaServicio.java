@@ -41,7 +41,7 @@ public class EmpresaServicio {
         }
     }
     @PatchMapping("/{id_empresa}")
-    public Empresa actualizarEmpresa(@PathVariable("id_empresa") Long id_empresa, @RequestBody Empresa empresa){
+    public Boolean actualizarEmpresa(@PathVariable("id_empresa") Long id_empresa, Empresa empresa){
         Optional<Empresa> dbdata= repositorio.findById(id_empresa);
         if(dbdata.isPresent()) {
             Empresa company=dbdata.get();
@@ -50,25 +50,26 @@ public class EmpresaServicio {
             company.setTelefono(empresa.getTelefono());
             company.setId_empresa(empresa.getId_empresa());
             company.setDocumento(empresa.getDocumento());
-            company.setCreatedAt(empresa.getCreatedAt());
+            //company.setCreatedAt(empresa.getCreatedAt());
             company.setUpdatedAt(empresa.getUpdatedAt());
 
-
+            System.out.println(company+" "+company.getCreatedAt());
             this.repositorio.save(company);
-            return company;
+
+            return true;
         }
-        return null;
+        return false;
     }
 
 
 
-    public String eliminarEmpresa(Long id_empresa){
+    public Boolean eliminarEmpresa(Long id_empresa){
         if(buscarEmpresa(id_empresa).isPresent()){
             repositorio.deleteAllById(Collections.singleton(id_empresa));
-            return "Empresa eliminada";
+            return true;
         }
         else {
-            return "La empresa a eliminar no existe";
+            return false;
         }
     }
 }
